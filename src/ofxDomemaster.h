@@ -12,23 +12,26 @@ class ofxDomemaster{
         void end(int i);
         void resize(int w, int h);
         void setCameraPosition(float x, float y, float z);
+        void setCameraLookAt(float x, float y, float z);
         void setMeshScale(float s);
-    
-    static const int renderCount = 5;
 
+        static const int renderCount = 5;
+    
+        vector<ofCamera> renderCamera;
+    
     private:
         ofRectangle view;
-        vector<ofCamera> renderCamera;
         vector<ofFbo> renderFbo;
         vector<ofVboMesh> renderMesh;
+
 
         ofCamera fisheyeCamera;
         ofRectangle fisheyeView;
 
         ofImage mask;
     
-        int width;
-        int height;
+        int domeWidth;
+        int domeHeight;
     
         float meshScale;
         float meshScaleExt;
@@ -42,5 +45,7 @@ class ofxDomemaster{
             right,
             top
         };
+    
+    ofFbo myTestRenderFbo;
 
 };
