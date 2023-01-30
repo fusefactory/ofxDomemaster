@@ -16,6 +16,8 @@ void ofxDomemaster::setup(){
         ofFbo f;
         ofFbo::Settings settings;
         settings.internalformat = GL_RGBA;
+        settings.width = domeWidth;
+        settings.height = domeHeight;
         f.allocate(settings);
         renderFbo.push_back(f);
         ofVboMesh m;
